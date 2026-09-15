@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión | FinanzApp</title>
-    <link rel="stylesheet" href="../assets/css/recursos.css">
+    <link rel="stylesheet" href="/public/assets/css/normalize.css">
+    <link rel="stylesheet" href="/public/assets/css/login.css">
 </head>
 <body class="authPage">
     <main class="mainContent" id="main-content">
+
+        
         <!-- Columna de presentación. Contenido de referencia para la maqueta. -->
         <section class="loginInfo" aria-labelledby="intro-title">
             <header class="appImage">
@@ -99,6 +102,22 @@
                     </li>
                     <li class="featureItem">
                         <div class="featureIcon">
+                            <svg 
+                                class="appIcon" aria-hidden="true" focusable="false" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                height="24" 
+                                viewBox="0 -960 960 960" 
+                                width="24">
+                                <path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q104-33 172-132t68-220v-189l-240-90-240 90v189q0 121 68 220t172 132Zm0-316Z"/>
+                            </svg>
+                        </div>
+                        <div class="featureContent">
+                            <h4 class="featureTitle">Protección CSRF y Sesión Blindada:</h4>
+                            <p class="featureDescription">Regeneración de sesión al autenticar y tokens anti-tampering por petición</p>
+                        </div>
+                    </li>
+                    <li class="featureItem">
+                        <div class="featureIcon">
                             <svg
                                 class="appIcon" aria-hidden="true" focusable="false" fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -131,6 +150,8 @@
                 <p class="appVersion">v2.4 Core</p>
             </footer>
         </section>
+
+
         <!-- Columna de acceso. Los controles interactivos se conectarán más adelante. -->
         <section class="loginSession" aria-labelledby="auth-title">
             <h1 class="authTitle" id="auth-title">Accede a FinanzApp</h1>

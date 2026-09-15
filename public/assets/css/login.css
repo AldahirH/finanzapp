@@ -1,0 +1,414 @@
+@font-face {
+    font-family: Manrope;
+    src: url("../fonts/Manrope.ttf") format("truetype");
+    font-weight: 200 800;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Hanken Grotesk";
+    src: url("../fonts/HankenGrotesk.ttf") format("truetype");
+    font-weight: 100 900;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Hanken Grotesk";
+    src: url("../fonts/HankenGrotesk-Italic.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+:root {
+    --secondary: #4edea3;
+    --error-container: #93000a;
+    --on-surface: #d4e4fa;
+    --secondary-container: #00a572;
+    --on-secondary-fixed-variant: #005236;
+    --surface: #051424;
+    --inverse-primary: #565e74;
+    --outline: #909097;
+    --error: #ffb4ab;
+    --background: #051424;
+    --secondary-fixed-dim: #4edea3;
+    --surface-variant: #273647;
+    --surface-container: #122131;
+    --primary: #bec6e0;
+    --secondary-fixed: #6ffbbe;
+    --tertiary: #ffb3ad;
+    --on-tertiary-fixed: #410004;
+    --on-tertiary: #68000a;
+    --on-tertiary-fixed-variant: #930013;
+    --on-secondary-container: #00311f;
+    --tertiary-fixed-dim: #ffb3ad;
+    --on-tertiary-container: #eb4141;
+    --surface-container-lowest: #010f1f;
+    --on-surface-variant: #c6c6cd;
+    --outline-variant: #45464d;
+    --on-primary-container: #798098;
+    --surface-container-highest: #273647;
+    --tertiary-fixed: #ffdad7;
+    --on-primary: #283044;
+    --tertiary-container: #390003;
+    --primary-fixed: #dae2fd;
+    --primary-fixed-dim: #bec6e0;
+    --primary-container: #0f172a;
+    --on-primary-fixed-variant: #3f465c;
+    --inverse-on-surface: #233143;
+    --surface-dim: #051424;
+    --on-secondary: #003824;
+    --inverse-surface: #d4e4fa;
+    --on-background: #d4e4fa;
+    --surface-container-high: #1c2b3c;
+    --surface-container-low: #0d1c2d;
+    --on-primary-fixed: #131b2e;
+    --on-secondary-fixed: #002113;
+    --surface-bright: #2c3a4c;
+    --on-error-container: #ffdad6;
+    --surface-tint: #bec6e0;
+    --on-error: #690005;
+    --font-body: "Hanken Grotesk", sans-serif;
+    --font-heading: Manrope, sans-serif;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+}
+
+/*Valores globales*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h1,h2,h3,h4{
+    color: var(--on-surface);
+    font-family: var(--font-heading);
+}
+
+p{
+    color: var(--on-surface);
+    font-family: var(--font-body);
+}
+
+
+/*
+Body
+*/
+.authPage{
+    min-height: 100vh;
+    background-color: var(--surface);
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    font-family: var(--font-body);
+
+}
+
+/*
+Contenedor Principal
+*/
+.mainContent{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: min(1100px, 100%);
+    margin: auto;
+    border-radius: 12px;
+    border: 1px solid var(--outline);
+    overflow: hidden;
+    background-color: var(--surface-container-low);
+}
+
+/*
+Contenedor Principal
+    |___Seccion izquierda (.loginInfo)
+    |___Seccion Derecha  (.loginSession)
+*/
+
+.loginInfo, .loginSession{
+    padding: var(--space-xl);
+}
+
+
+/*
+Contenedor Principal
+    |___Seccion izquierda (.loginInfo)
+*/
+
+/*Header*/
+.loginInfo{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: var(--space-xl);
+}
+
+.appImage{
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-md);
+    margin-bottom: 1.5rem;
+}
+
+.logoImage{
+    padding: 8px;
+    background-color: var(--secondary-fixed);
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.appIcon{
+    color: #005236;
+}
+
+.brandName{
+    color: var(--inverse-surface);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.brandTagline{
+    color: #00a572;
+    font-size: 14px;
+}
+
+/*loginControlInfo*/
+.loginControlInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.introContent{
+    margin-bottom: 1.5rem;
+}
+
+.introTitle{
+    color: var(--inverse-surface);
+    margin-bottom: 1rem;
+}
+
+.introDescription{
+    color: var(--on-surface-variant);
+}
+
+.balanceCard{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border: 1px solid var(--outline-variant);
+    border-radius: var(--radius-lg);
+    background-color: var(--surface-container);
+    margin-bottom: 0.7rem;
+}
+
+
+.balanceHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.balanceTitle{
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+    font-size: 12px;
+}
+
+.balanceBadge{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--on-secondary-fixed-variant);
+    padding: 4px 10px;
+    border-radius: 12px;
+    gap: 10px;
+    color: var(--secondary);
+}
+
+.badgeText{
+    color: var(--secondary-fixed);
+    font-size: 12px;
+}
+
+.balanceBadge .appIcon{
+    color: var(--secondary-fixed);
+}
+
+.balanceAmount{
+    color: var(--on-surface);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.amountDecimals, .amountCurrency{
+    font-size:16px;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.balanceSummary{
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-md);
+}
+
+.balanceItem{
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex:1;
+}
+
+.balanceItemLabel{
+    font-size: 12px;
+    color: var(--on-surface-variant);
+}
+
+.balanceItemAmount{
+    margin-left: auto;
+    font-weight: 700;
+}
+
+.balanceItemIncome .balanceItemAmount { 
+    color: var(--secondary); 
+}
+.balanceItemExpense .balanceItemAmount{ 
+    color: var(--tertiary); 
+}
+
+.statusDot{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.balanceItemIncome .statusDot {
+    background-color: var(--secondary);
+}
+
+.balanceItemExpense .statusDot {
+    background-color: var(--tertiary);
+}
+
+.featuresSection{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 10px;
+}
+
+.featuresTitle{
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--on-surface-variant);
+}
+
+.featuresList{
+    list-style: none;
+    padding-left: 0;
+}
+
+.featureItem{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.featureIcon{
+    color: var(--secondary);
+}
+
+.featureTitle{
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--on-surface-variant);
+}
+
+.featureDescription{
+    font-size: 12px;
+    color: var(--on-surface-variant);
+}
+
+/*footer*/
+.infoFooter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.securityInfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.securityInfo .appIcon{
+    width: 20px;
+}
+
+.securityText{
+    font-size: 10px;
+}
+
+.appVersion{
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/*
+Contenedor Principal
+    |___Seccion derecha (.loginSession)
+*/
+
+.loginSession{
+    background-color: var(--surface-container);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Footer
+*/
+.siteFooter{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+}
