@@ -65,6 +65,7 @@
     --on-error-container: #ffdad6;
     --surface-tint: #bec6e0;
     --on-error: #690005;
+    --form-focus:#6366f1;
     --font-body: "Hanken Grotesk", sans-serif;
     --font-heading: Manrope, sans-serif;
     --radius-sm: 4px;
@@ -81,15 +82,31 @@
 *{
     box-sizing: border-box;
     margin: 0;
+    border: 1px solid red;
 }
 
-h1,h2,h3,h4{
-    color: var(--on-surface);
+h1, h2, h3, h4,
+.brandName,
+.introTitle,
+.balanceAmount,
+.authTitle {
     font-family: var(--font-heading);
 }
 
-p{
-    color: var(--on-surface);
+p,
+label,
+button,
+input,
+.brandTagline,
+.introDescription,
+.balanceTitle,
+.balanceItemLabel,
+.featureDescription,
+.authDescription,
+.formLabel,
+.formHelp,
+.termsText,
+.buttonText {
     font-family: var(--font-body);
 }
 
@@ -104,7 +121,6 @@ Body
     flex-direction: column;
     flex:1;
     font-family: var(--font-body);
-
 }
 
 /*
@@ -245,6 +261,10 @@ Contenedor Principal
     margin-bottom: 10px;
 }
 
+.balanceTotal{
+    border-bottom: 1px solid var(--outline-variant);
+}
+
 .amountDecimals, .amountCurrency{
     font-size:16px;
     font-weight: 500;
@@ -348,6 +368,7 @@ Contenedor Principal
     display: flex;
     align-items: center;
     gap: 10px;
+    color: var(--on-surface-variant);
 }
 
 .securityInfo .appIcon{
@@ -356,11 +377,13 @@ Contenedor Principal
 
 .securityText{
     font-size: 10px;
+    color: var(--on-surface-variant);
 }
 
 .appVersion{
     font-size: 10px;
     font-weight: bold;
+    color: var(--on-surface-variant);
 }
 
 /*
@@ -370,25 +393,217 @@ Contenedor Principal
 
 .loginSession{
     background-color: var(--surface-container);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+.authHeader{
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid var(--outline-variant);
+}
+
+.authTitle{
+    color: var(--on-surface-variant);
+    font-weight: 700;
+}
+
+.authSwitch{
+    background: none;
+    border: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--on-surface-variant);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.authSwitch.isActive{
+    color: var(--secondary);
+    border-bottom-color: var(--secondary);
+}
+
+.authIntro{
+    padding: 15px 0px 15px 0px;
+}
+
+.authDescription{
+    color: var(--on-surface-variant);
+}
+
+.authAlert{
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+.authAlertError{
+    background-color: rgba(147, 0, 10, 0.35);
+    border: 1px solid var(--error-container);
+}
+
+.alertIcon .appIcon{
+    color: var(--on-tertiary-container);
+    flex-shrink: 0;
+}
+
+.alertTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--on-tertiary-container);
+}
+
+.alertMessage {
+    font-size: 13px;
+    color: var(--error);
+}
+
+/*Ocultar el mensaje de error, también esta definido en el html*/
+.authAlert[hidden] {
+    display: none;
+}
+
+.authPanel[hidden] {
+    display: none;
+}
+
+/*Formularios*/
+.formField{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.formLabel{
+    color: var(--on-surface-variant);
+}
+
+.formLabelRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputGroup{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background-color: var(--surface-container-high);
+    border: 1px solid var(--outline-variant);
+}
+
+.inputGroup .appIcon{
+    color: var(--inverse-primary);
+    flex-shrink: 0;
+}
+
+.formInput{
+    flex: 1;
+    min-width: 0;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--on-surface);
+}
+
+.formInput::placeholder{
+    color: var(--on-primary-container);
+}
+
+.inputGroup:focus-within{
+    border-color: var(--form-focus);
+}
+
+.textButton{
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--secondary);
+    font-size: 13px;
+    cursor:pointer;
+}
+
+.textButton:disabled{
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.passwordToggle{
+    background: none;
+    border: none;
+    padding: 0; 
+    color: var(--inverse-primary);
+    cursor: pointer;
+    display: flex;
+}
+
+.passwordToggle[hidden], .passwordIconHidden[hidden]{
+    display: none;
+}
+
+/* Checkbox de recordar contraseña */
+.checkboxField{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.formCheckbox{
+    width: 18px;
+    height: 18px;
+    accent-color: var(--secondary);
+    cursor: pointer;
+}
+
+.formCheckbox:disabled{
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.checkboxLabel{
+    color: var(--on-surface);
+    font-size: 14px;
+}
+
+.formActions{
+    display: flex;
+    flex-direction: column;
+}
+
+.primaryButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.primaryButton .appIcon{
+    color: #005236;
+    
+}
+
+.buttonText{
+    color: #005236;
+}
+
+/*Registro*/
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* Terminos de autenticacion */
 
 
 
