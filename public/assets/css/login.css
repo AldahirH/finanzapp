@@ -690,3 +690,112 @@ Footer
 .footerText:hover{
     color:var(--secondary);
 }
+
+/*
+Media Queries
+*/
+
+/* Pantallas medianas: dar espacio al contenido del footer */
+@media (max-width: 1100px){
+    .siteFooter{
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .optionsList{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Tablet: pasar de dos columnas a una */
+@media (max-width: 900px){
+    .mainContent{
+        grid-template-columns: 1fr;
+        width: min(680px, calc(100% - 32px));
+        margin: 24px auto;
+    }
+
+    .loginInfo, .loginSession{
+        min-width: 0;
+        padding: 24px;
+    }
+}
+
+/* Teléfono: ajustar los elementos dentro de cada sección */
+@media (max-width: 600px){
+    .mainContent{
+        width: calc(100% - 24px);
+        margin: 12px auto;
+    }
+
+    .loginInfo, .loginSession{
+        padding: 20px;
+    }
+
+    .introTitle{
+        font-size: 24px;
+    }
+
+    .balanceHeader{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .balanceAmount {
+        font-size: 28px;
+    }
+
+    .amountDecimals,
+    .amountCurrency {
+        font-size: 16px;
+    }
+
+    .balanceSummary {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .featuresSection,
+    .infoFooter {
+        padding: 16px 0;
+    }
+
+    .featureItem {
+        align-items: flex-start;
+    }
+
+    .featureIcon {
+        flex-shrink: 0;
+    }
+
+    .infoFooter {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .authHeader {
+        gap: 8px;
+    }
+
+    .authSwitch {
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+
+    .formLabelRow {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .siteFooter {
+        flex-direction: column;
+        padding: 20px 16px;
+    }
+
+    .optionsList {
+        gap: 8px 16px;
+    }
+}
