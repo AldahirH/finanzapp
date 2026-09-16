@@ -260,7 +260,7 @@
             </div>
 
             <!-- Retira hidden de este panel y oculta login-panel para maquetar el registro. -->
-            <div class="authPanel" id="register-panel" role="tabpanel" aria-labelledby="show-register" tabindex="0" hidden>
+            <div class="authPanel" id="register-panel" role="tabpanel" aria-labelledby="show-register" tabindex="0" >
                 <div class="authIntro">
                     <p class="authDescription" id="register-description">Crea tu cuenta para organizar tus ingresos y gastos.</p>
                     <div class="authAlert authAlertError" id="register-error" role="alert" hidden>
@@ -271,8 +271,8 @@
                     </div>
                 </div>
 
-                <!-- Formulario independiente del login. El envío se activará al conectar PHP. -->
-                <form class="authForm" id="register-form" method="post" aria-describedby="register-description">
+                <!-- Formulario independiente del login. El envío se activará al conectar PHP (Registrar usuario). -->
+                <form class="authForm" id="register-form" method="post" aria-describedby="register-description" hidden>
                     <div class="formField">
                         <label class="formLabel" for="register-name">Nombre</label>
                         <div class="inputGroup">
@@ -299,7 +299,6 @@
                         <div class="inputGroup">
                             <input class="formInput" id="register-password-confirm" name="password_confirmation" type="password" autocomplete="new-password" aria-describedby="register-password-help" required>
                         </div>
-                        <p class="formHelp" id="register-password-help">Escribe de nuevo la misma contraseña.</p>
                     </div>
 
                     <div class="formActions">
@@ -311,7 +310,7 @@
             </div>
 
             <div class="authTerms">
-                <p class="termsText">Al registrarte o ingresar, aceptas los <strong>Términos de Servicio</strong> y la
+                <p class="termsText">Al registrarte o ingresar, aceptas los <strong>Términos de Servicio</strong> y
                 <strong>Privacidad Bancaria</strong> de FinanzApp.</p>
             </div>
         </section>
@@ -321,10 +320,10 @@
         <p class="copyright">&copy; 2026 FinanzApp — Sistema Ejecutivo de Control Financiero Personal</p>
         <!-- Textos de referencia hasta que existan las páginas correspondientes. -->
         <ul class="optionsList">
-            <li class="footerItem"><span class="footerText">Privacidad</span></li>
-            <li class="footerItem"><span class="footerText">Seguridad</span></li>
-            <li class="footerItem"><span class="footerText">Términos de Servicio</span></li>
-            <li class="footerItem"><span class="footerText">Centro de Ayuda</span></li>
+            <li class="footerItem"><a href="" class="footerText">Privacidad</a></li>
+            <li class="footerItem"><a href="" class="footerText">Seguridad</a></li>
+            <li class="footerItem"><a href="" class="footerText">Términos de Servicio</a></li>
+            <li class="footerItem"><a href="" class="footerText">Centro de Ayuda</a></li>
         </ul>
     </footer>
 </body>

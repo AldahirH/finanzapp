@@ -82,7 +82,6 @@
 *{
     box-sizing: border-box;
     margin: 0;
-    border: 1px solid red;
 }
 
 h1, h2, h3, h4,
@@ -121,6 +120,9 @@ Body
     flex-direction: column;
     flex:1;
     font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--on-surface);
 }
 
 /*
@@ -129,10 +131,10 @@ Contenedor Principal
 .mainContent{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: min(1100px, 100%);
+    width: min(1500px, 100%);
     margin: auto;
     border-radius: 12px;
-    border: 1px solid var(--outline);
+    border: 1px solid var(--outline-variant);
     overflow: hidden;
     background-color: var(--surface-container-low);
 }
@@ -170,14 +172,18 @@ Contenedor Principal
 
 .logoImage{
     padding: 8px;
-    background-color: var(--secondary-fixed);
+    background-color: var(--secondary);
     display: flex;
     align-items: center;
     border-radius: 12px;
 }
 
 .appIcon{
-    color: #005236;
+    color: inherit;
+}
+
+.logoImage .appIcon{
+    color: var(--on-secondary);
 }
 
 .brandName{
@@ -187,7 +193,7 @@ Contenedor Principal
 }
 
 .brandTagline{
-    color: #00a572;
+    color: var(--secondary);
     font-size: 14px;
 }
 
@@ -203,6 +209,8 @@ Contenedor Principal
 
 .introTitle{
     color: var(--inverse-surface);
+    font-size: 28px;
+    line-height: 1.3;
     margin-bottom: 1rem;
 }
 
@@ -238,7 +246,7 @@ Contenedor Principal
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--on-secondary-fixed-variant);
+    background-color: rgba(78, 222, 163, 0.12);
     padding: 4px 10px;
     border-radius: 12px;
     gap: 10px;
@@ -246,17 +254,20 @@ Contenedor Principal
 }
 
 .badgeText{
-    color: var(--secondary-fixed);
+    color: var(--secondary);
     font-size: 12px;
+    font-weight: 600;
 }
 
 .balanceBadge .appIcon{
-    color: var(--secondary-fixed);
+    color: var(--secondary);
 }
 
 .balanceAmount{
     color: var(--on-surface);
-    font-size: 32px;
+    font-family: var(--font-heading);
+    font-size: 36px;
+    line-height: 1.3;
     font-weight: 700;
     margin-bottom: 10px;
 }
@@ -266,9 +277,9 @@ Contenedor Principal
 }
 
 .amountDecimals, .amountCurrency{
-    font-size:16px;
+    font-size:20px;
     font-weight: 500;
-    opacity: 0.7;
+    color: var(--on-surface-variant);
 }
 
 .balanceSummary{
@@ -285,12 +296,14 @@ Contenedor Principal
 }
 
 .balanceItemLabel{
-    font-size: 12px;
+    font-size: 14px;
     color: var(--on-surface-variant);
 }
 
 .balanceItemAmount{
     margin-left: auto;
+    font-family: var(--font-heading);
+    font-size: 20px;
     font-weight: 700;
 }
 
@@ -348,11 +361,11 @@ Contenedor Principal
 .featureTitle{
     font-size: 15px;
     font-weight: 700;
-    color: var(--on-surface-variant);
+    color: var(--on-surface);
 }
 
 .featureDescription{
-    font-size: 12px;
+    font-size: 14px;
     color: var(--on-surface-variant);
 }
 
@@ -373,15 +386,17 @@ Contenedor Principal
 
 .securityInfo .appIcon{
     width: 20px;
+    height: 20px;
+    color: var(--secondary);
 }
 
 .securityText{
-    font-size: 10px;
+    font-size: 12px;
     color: var(--on-surface-variant);
 }
 
 .appVersion{
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     color: var(--on-surface-variant);
 }
@@ -392,7 +407,7 @@ Contenedor Principal
 */
 
 .loginSession{
-    background-color: var(--surface-container);
+    background-color: var(--surface-container-lowest);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -405,7 +420,9 @@ Contenedor Principal
 }
 
 .authTitle{
-    color: var(--on-surface-variant);
+    color: var(--on-surface);
+    font-size: 24px;
+    line-height: 1.3;
     font-weight: 700;
 }
 
@@ -443,24 +460,24 @@ Contenedor Principal
 }
 
 .authAlertError{
-    background-color: rgba(147, 0, 10, 0.35);
+    background-color: rgba(147, 0, 10, 0.18);
     border: 1px solid var(--error-container);
 }
 
 .alertIcon .appIcon{
-    color: var(--on-tertiary-container);
+    color: var(--error);
     flex-shrink: 0;
 }
 
 .alertTitle {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
-    color: var(--on-tertiary-container);
+    color: var(--error);
 }
 
 .alertMessage {
-    font-size: 13px;
-    color: var(--error);
+    font-size: 14px;
+    color: var(--on-error-container);
 }
 
 /*Ocultar el mensaje de error, también esta definido en el html*/
@@ -481,7 +498,9 @@ Contenedor Principal
 }
 
 .formLabel{
-    color: var(--on-surface-variant);
+    color: var(--on-surface);
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .formLabelRow{
@@ -496,12 +515,13 @@ Contenedor Principal
     gap: 10px;
     padding: 10px 12px;
     border-radius: 12px;
-    background-color: var(--surface-container-high);
+    min-height: 48px;
+    background-color: var(--surface-container);
     border: 1px solid var(--outline-variant);
 }
 
 .inputGroup .appIcon{
-    color: var(--inverse-primary);
+    color: var(--on-surface-variant);
     flex-shrink: 0;
 }
 
@@ -512,10 +532,13 @@ Contenedor Principal
     border: none;
     outline: none;
     color: var(--on-surface);
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .formInput::placeholder{
-    color: var(--on-primary-container);
+    color: var(--on-surface-variant);
+    opacity: 1;
 }
 
 .inputGroup:focus-within{
@@ -540,7 +563,7 @@ Contenedor Principal
     background: none;
     border: none;
     padding: 0; 
-    color: var(--inverse-primary);
+    color: var(--on-surface-variant);
     cursor: pointer;
     display: flex;
 }
@@ -549,7 +572,7 @@ Contenedor Principal
     display: none;
 }
 
-/* Checkbox de recordar contraseña */
+/* Checkbox de recordar contraseña 7 Registro de Usuario */
 .checkboxField{
     display: flex;
     align-items: center;
@@ -570,7 +593,7 @@ Contenedor Principal
 }
 
 .checkboxLabel{
-    color: var(--on-surface);
+    color: var(--on-surface-variant);
     font-size: 14px;
 }
 
@@ -584,38 +607,42 @@ Contenedor Principal
     justify-content: center;
     align-items: center;
     background-color: var(--secondary);
+    color: var(--on-secondary);
+    border: 1px solid transparent;
+    min-height: 48px;
+    font-size: 16px;
+    font-weight: 700;
     padding: 10px;
     border-radius: 10px;
 }
 
 .primaryButton .appIcon{
-    color: #005236;
+    color: var(--on-secondary);
     
 }
 
 .buttonText{
-    color: #005236;
+    color: var(--on-secondary);
 }
-
-/*Registro*/
-
-
-
-
 
 /* Terminos de autenticacion */
 
+.authTerms{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
+.termsText{
+    color: var(--on-surface-variant);
+    font-size: 14px;
+}
 
-
-
-
-
-
-
-
-
-
+.termsText strong{
+    color: var(--secondary);
+}
 
 /*
 Footer
@@ -625,5 +652,41 @@ Footer
     justify-content: space-between;
     align-items: center;
     gap: var(--space-md);
-    padding: var(--space-md) 0;
+    padding: 20px;
+    margin-top: 2rem;
+    background-color: var(--surface-container-lowest);
+}
+
+.siteFooter .brandName{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--on-surface);
+}
+.copyright{
+    color: var(--on-surface-variant);
+    font-size: 13px;
+}
+
+.optionsList{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footerItem{
+    list-style: none;
+    padding-left: 0;
+}
+
+.footerText{
+    color: var(--on-surface-variant);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.footerText:hover{
+    color:var(--secondary);
 }
