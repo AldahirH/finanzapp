@@ -132,7 +132,7 @@ Contenedor Principal
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: min(1500px, 100%);
-    margin: auto;
+    margin: 2rem auto auto auto;
     border-radius: 12px;
     border: 1px solid var(--outline-variant);
     overflow: hidden;
@@ -457,6 +457,19 @@ Contenedor Principal
     padding: 16px;
     border-radius: 12px;
     margin-top: 1rem;
+}
+
+.authAlertSuccess{
+    background-color: rgba(78, 222, 163, 0.12);
+    border: 1px solid var(--secondary);
+}
+
+.authAlertSuccess .alertTitle{ 
+    color: var(--secondary); 
+}
+
+.authAlertSuccess .alertMessage{ 
+    color: var(--on-surface); 
 }
 
 .authAlertError{

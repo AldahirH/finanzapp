@@ -4,9 +4,13 @@ FinanzApp es una aplicación web para registrar ingresos y gastos personales, or
 
 ## Estado actual del repositorio
 
-Al preparar este documento se verificaron las carpetas `app`, `config`, `database`, `docs`, `licencias`, `public`, `routes` y `storage`, todas sin archivos. El README y `.gitignore` estaban vacíos. Por tanto, este repositorio es una estructura inicial: todavía no contiene una aplicación ejecutable, conexión a base de datos ni funcionalidades implementadas.
+La pantalla de acceso y registro está en `app/Views/auth/login.php`, trasladada desde `public/maquetas/login.html`. Conserva sus recursos CSS y JavaScript en `public/assets/`. Existe una entrada PHP mínima: `public/index.php` resuelve una lista de rutas en `routes/web.php` y `AuthController::showLogin()` muestra la vista. Aún no hay conexión PDO ni registro, inicio o cierre de sesión implementados.
 
-Las secciones siguientes describen el alcance y la arquitectura acordados, no funcionalidades ya terminadas. Actualizar este apartado a medida que avance el desarrollo.
+Para abrirla con Apache de XAMPP iniciado, visitar `http://localhost/finanzapp/public/index.php?r=login`. También se puede entrar sin `?r=login`, porque es la ruta predeterminada. Editar el diseño en la vista y sus estilos en `public/assets/css/login.css`. Los enlaces `assets/...` se resuelven desde la URL de `public/index.php`, no desde la carpeta de la vista. La base ya fue importada según lo indicado por el autor; su conexión desde la aplicación queda pendiente.
+
+Las secciones siguientes describen el alcance y la arquitectura acordados, salvo donde se indique expresamente lo implementado. Actualizar este apartado a medida que avance el desarrollo.
+
+Verificación de esta etapa: los cuatro archivos PHP pasan `php -l`. Apache respondió HTTP 200 tanto para la entrada predeterminada como para `?r=login`, los dos CSS y `assets/js/login.js`; el HTML servido incluye el panel de registro. La apariencia visual y las interacciones no se comprobaron en un navegador durante este traslado.
 
 ## Objetivo funcional
 
